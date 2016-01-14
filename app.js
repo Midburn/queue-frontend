@@ -8,10 +8,12 @@ xhttp.onreadystatechange = function() {
 	}
 };
 
-xhttp.open('GET', backend, true);
-xhttp.send();
-
-setInterval(function() {
+var init = function() {
 	xhttp.open('GET', backend, true);
 	xhttp.send();
-}, 10000);
+
+	setInterval(function() {
+		xhttp.open('GET', backend, true);
+		xhttp.send();
+	}, 10000);
+};
